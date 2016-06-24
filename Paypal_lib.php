@@ -68,8 +68,8 @@ class paypal_lib {
 		$this->CI->load->helper('form');
 		$this->CI->load->config('paypallib_config');
 		
-		//$this->paypal_url = 'https://www.paypal.com/cgi-bin/webscr';
-        $this->paypal_url = 'https://www.sandbox.paypal.com/cgi-bin/webscr';
+		$sanbox = $this->CI->config->item('sandbox');
+		$this->paypal_url = ($sanbox == TRUE)?'https://www.sandbox.paypal.com/cgi-bin/webscr':'https://www.paypal.com/cgi-bin/webscr';
                 
 		$this->last_error = '';
 		$this->ipn_response = '';
