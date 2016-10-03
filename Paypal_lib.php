@@ -61,7 +61,7 @@ class paypal_lib {
 	
 	var $CI;
 	
-	function paypal_lib()
+	function __construct()
 	{
 		$this->CI =& get_instance();
 		$this->CI->load->helper('url');
